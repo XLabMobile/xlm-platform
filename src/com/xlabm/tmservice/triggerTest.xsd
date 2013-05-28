@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="http://www.berkeley.edu/xlabmobile/TriggerSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="triggers" type="trig:triggersType"
+                xmlns:trig="http://www.berkeley.edu/xlabmobile/TriggerSchema"/>
+    <xs:complexType name="TimeTriggerType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="duration"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="triggersType">
+        <xs:sequence>
+            <xs:element type="trig:triggerType" name="trigger"
+                        maxOccurs="unbounded" minOccurs="0"
+                        xmlns:trig="http://www.berkeley.edu/xlabmobile/TriggerSchema"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="xFormID"/>
+        <xs:attribute type="xs:string" name="xFormName"/>
+    </xs:complexType>
+    <xs:complexType name="triggerType">
+        <xs:sequence>
+            <xs:element type="trig:TimeTriggerType" name="TimeTrigger"
+                        minOccurs="0"
+                        xmlns:trig="http://www.berkeley.edu/xlabmobile/TriggerSchema"/>
+            <xs:element type="trig:GeoTriggerType" name="GeoTrigger"
+                        minOccurs="0"
+                        xmlns:trig="http://www.berkeley.edu/xlabmobile/TriggerSchema"/>
+            <xs:element type="xs:string" name="TriggerPrototype" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="qid" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="GeoTriggerType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="lat" use="optional"/>
+                <xs:attribute type="xs:string" name="lon" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
