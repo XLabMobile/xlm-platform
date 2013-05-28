@@ -2,7 +2,7 @@
 
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /Users/mac/IdeaProjects/XLMTriggerManagerService/src/com/xlabm/tmservice/ITMServiceCallback.aidl
+ * Original file: /Users/mac/xlab/xlm-platform/src/com/xlabm/tmservice/ITMServiceCallback.aidl
  */
 package com.xlabm.tmservice;
 
