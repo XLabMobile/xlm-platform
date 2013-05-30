@@ -124,9 +124,9 @@ public class TriggerXMLProcessor {
 
 
         parser.require(XmlPullParser.START_TAG, ns, "trigger");
-        //type and qid are defined as attributes on the trigger tag
+        //type and mQid are defined as attributes on the trigger tag
 
-        qid = parser.getAttributeValue(null, "qid");
+        qid = parser.getAttributeValue(null, "mQid");
 
         parser.nextTag();
         do {
